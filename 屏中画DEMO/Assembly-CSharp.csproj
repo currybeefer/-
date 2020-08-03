@@ -165,8 +165,8 @@
     <Compile Include="Assets\Resources\Standard Assets\Vehicles\Car\Scripts\SkidTrail.cs" />
     <Compile Include="Assets\Resources\Standard Assets\Vehicles\Car\Scripts\Suspension.cs" />
     <Compile Include="Assets\Resources\Standard Assets\Vehicles\Car\Scripts\WheelEffects.cs" />
-    <Compile Include="Assets\Scripts\CubeRotation.cs" />
-    <Compile Include="Assets\Scripts\Ground.cs" />
+    <Compile Include="Assets\Scripts\Paint.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
     <None Include="Assets\Resources\LowPolyWater_Pack\Shaders\WaterShaded.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>F:/WorldInPaintingDEMO/屏中画DEMO/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
