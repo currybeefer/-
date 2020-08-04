@@ -5,17 +5,14 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Transform m_Transform;
+    public string gTag;
     void Start()
     {
         m_Transform = gameObject.GetComponent<Transform>();
     }
-    
-    void Update()
-    {
-        
-    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        m_Transform.SetParent(collision.transform);
+        gTag = collision.transform.tag;
     }
 }

@@ -7,15 +7,17 @@ public class Paint : MonoBehaviour
     private Transform m_Transform;//屏风本身的Transform组件
     public Transform groundTransform;//实际的地图的Transform组件
     public Transform cameraTransform;//每一块地图的摄像机的Transform组件
-    public float speed = 100;
+    private GameObject player;
+    private Vector3 originPosition;//保存在移动位置之前时的位置
     private bool isClicked = false;
+    private bool playerIn = false;
     private Animation m_Animation;
     public int state;
-    private Vector3 originPosition;//保存在移动位置之前时的位置
     void Start()
     {
         m_Transform = gameObject.GetComponent<Transform>();
         m_Animation = gameObject.GetComponent<Animation>();
+        player = GameObject.FindGameObjectWithTag("Player");
         state = 1;
     }
 
@@ -43,10 +45,25 @@ public class Paint : MonoBehaviour
                 state = 1;
             }
         }
+        if(player.GetComponent<Player>().gTag==groundTransform.tag)
+        {
+            playerIn = true;
+        }
+        else
+        {
+            playerIn = false;
+        }
     }
+    /// <summary>
+    /// 旋转方法
+    /// </summary>
     void RotateGround()
     {
         groundTransform.eulerAngles += new Vector3(0, 180, 0);
+        if(playerIn)
+        {
+            player.transform.RotateAround(groundTransform.position,Vector3.up, 180);
+        }
     }
     private void OnMouseOver()
     {
@@ -76,6 +93,9 @@ public class Paint : MonoBehaviour
     {
         Replace();//放下时发出射线，互换地图块位置
     }
+    /// <summary>
+    /// 屏风位置互换方法
+    /// </summary>
     private void Replace()
     {
         Ray ray = new Ray(m_Transform.position, Vector3.forward);
@@ -89,6 +109,15 @@ public class Paint : MonoBehaviour
                 Vector3 temp = hit.collider.gameObject.transform.position;
                 hit.collider.gameObject.transform.position = originPosition;
                 m_Transform.position = temp;
+
+                if(playerIn==true)
+                {
+                    //玩家的位置坐标随着屏风的移动而变换到移动后的位置
+                    Vector3 shift = hit.collider.gameObject.GetComponent<Paint>().groundTransform.position - groundTransform.position;
+                    player.transform.position += shift;
+                }
+
+
                 //互换地图块位置
                 Vector3 gTemp = hit.collider.gameObject.GetComponent<Paint>().groundTransform.position;
                 hit.collider.gameObject.GetComponent<Paint>().groundTransform.position = groundTransform.position;
@@ -98,6 +127,10 @@ public class Paint : MonoBehaviour
                 hit.collider.gameObject.GetComponent<Paint>().cameraTransform.position = cameraTransform.position;
                 cameraTransform.position = cTemp;
             }
+        }
+        else
+        {
+            m_Transform.position = originPosition;
         }
     }
 }

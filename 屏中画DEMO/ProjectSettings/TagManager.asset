@@ -4,9 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ground
   - Screen
   - GroundCamera
+  - Cround_1
+  - Ground_2
+  - Ground_3
+  - Ground_4
+  - Ground_5
   layers:
   - Default
   - TransparentFX
