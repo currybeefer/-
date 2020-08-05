@@ -60,16 +60,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Resources\AllSkyFree\AllSkyFree_Menu.cs" />
     <Compile Include="Assets\Resources\HolyShift\Scripts\CheckForStandardAssets.cs" />
     <Compile Include="Assets\Resources\LowPolyWater_Pack\Scripts\LowPolyWater.cs" />
-    <Compile Include="Assets\Resources\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
-    <Compile Include="Assets\Resources\SampleScenes\Menu\Scripts\PauseMenu.cs" />
-    <Compile Include="Assets\Resources\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
-    <Compile Include="Assets\Resources\SampleScenes\Scripts\CameraSwitch.cs" />
-    <Compile Include="Assets\Resources\SampleScenes\Scripts\LevelReset.cs" />
-    <Compile Include="Assets\Resources\SampleScenes\Scripts\ParticleSceneControls.cs" />
-    <Compile Include="Assets\Resources\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
-    <Compile Include="Assets\Resources\SampleScenes\Scripts\SlowMoButton.cs" />
     <Compile Include="Assets\Resources\Standard Assets\2D\Scripts\Camera2DFollow.cs" />
     <Compile Include="Assets\Resources\Standard Assets\2D\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Resources\Standard Assets\2D\Scripts\Platformer2DUserControl.cs" />
@@ -168,6 +161,7 @@
     <Compile Include="Assets\Scripts\Paint.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <None Include="Assets\Resources\LowPolyWater_Pack\Shaders\WaterShaded.shader" />
+    <None Include="Assets\Resources\AllSkyFree\AllSkyFree_Readme.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>F:/WorldInPaintingDEMO/屏中画DEMO/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
