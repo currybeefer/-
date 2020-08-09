@@ -13,8 +13,15 @@ public class GameManager : MonoBehaviour
     }
     void AddProgress()
     {
-        progress += 1;
-        progressText.text = progress + "/4";
+        if(progress>3)
+        {
+            progressText.text = "You Win!";
+        }
+        else
+        {
+            progress += 1;
+            progressText.text = progress + "/4";
+        }
     }
     
 }

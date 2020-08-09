@@ -60,8 +60,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Resources\AllSkyFree\AllSkyFree_Menu.cs" />
-    <Compile Include="Assets\Resources\HolyShift\Scripts\CheckForStandardAssets.cs" />
     <Compile Include="Assets\Resources\LowPolyWater_Pack\Scripts\LowPolyWater.cs" />
     <Compile Include="Assets\Resources\Standard Assets\2D\Scripts\Camera2DFollow.cs" />
     <Compile Include="Assets\Resources\Standard Assets\2D\Scripts\CameraFollow.cs" />
@@ -165,7 +163,6 @@
     <Compile Include="Assets\Scripts\Spirit.cs" />
     <Compile Include="Assets\Scripts\WaterSpirit.cs" />
     <None Include="Assets\Resources\LowPolyWater_Pack\Shaders\WaterShaded.shader" />
-    <None Include="Assets\Resources\AllSkyFree\AllSkyFree_Readme.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>F:/WorldInPaintingDEMO/屏中画DEMO/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

@@ -70,7 +70,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
@@ -187,7 +187,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475683584}
   m_LocalRotation: {x: 0.052205432, y: -0.39304096, z: -0.027593799, w: -0.91762304}
-  m_LocalPosition: {x: 0, y: 0, z: -0.52}
+  m_LocalPosition: {x: 0, y: 0, z: -0.385}
   m_LocalScale: {x: 0.99998856, y: 0.87673753, z: 0.99827427}
   m_Children:
   - {fileID: 453961942}
@@ -196,8 +196,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -2.24, y: 1.55}
-  m_SizeDelta: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -2.153, y: 0.406}
+  m_SizeDelta: {x: 2.0043, y: 1.7972}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &475683588
 Canvas:
