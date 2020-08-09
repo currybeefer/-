@@ -74,20 +74,21 @@ public class Paint : MonoBehaviour
     }
     IEnumerator OnMouseDown()
     {
-        originPosition = m_Transform.position;
-        Vector3 temp = m_Transform.position;
-        temp.z -= 1.5f;
-        m_Transform.position = temp;
-        Vector3 screenSpace = Camera.main.WorldToScreenPoint(m_Transform.position);//三维物体坐标转屏幕坐标
-        //将鼠标屏幕坐标转为三维坐标，再计算物体位置与鼠标之间的距离
-        Vector3 offset = m_Transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, 0, screenSpace.z));
-        while (Input.GetMouseButton(0))
-        {
-            Vector3 curScreenSpace = new Vector3(Input.mousePosition.x, 0, screenSpace.z);
-            Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenSpace) + offset;
-            m_Transform.position = curPosition;
-            yield return new WaitForFixedUpdate();
-        }
+            originPosition = m_Transform.position;
+            Vector3 temp = m_Transform.position;
+            temp.z -= 1.5f;
+            m_Transform.position = temp;//将屏风往前移动一点
+            Vector3 screenSpace = Camera.main.WorldToScreenPoint(m_Transform.position);//三维物体坐标转屏幕坐标
+                                                                                       //将鼠标屏幕坐标转为三维坐标，再计算物体位置与鼠标之间的距离
+            Vector3 offset = m_Transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, 0, screenSpace.z));
+            
+            while (Input.GetMouseButton(0))
+            {
+                Vector3 curScreenSpace = new Vector3(Input.mousePosition.x, 0, screenSpace.z);
+                Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenSpace) + offset;
+                m_Transform.position = curPosition;
+                yield return new WaitForFixedUpdate();
+            }
     }
     private void OnMouseUp()
     {
@@ -109,15 +110,18 @@ public class Paint : MonoBehaviour
                 Vector3 temp = hit.collider.gameObject.transform.position;
                 hit.collider.gameObject.transform.position = originPosition;
                 m_Transform.position = temp;
-
-                if(playerIn==true)
+                //互换玩家的位置
+                if (playerIn == true)//如果玩家在鼠标拖着的那个屏风上 
                 {
                     //玩家的位置坐标随着屏风的移动而变换到移动后的位置
                     Vector3 shift = hit.collider.gameObject.GetComponent<Paint>().groundTransform.position - groundTransform.position;
                     player.transform.position += shift;
                 }
-
-
+                if (hit.collider.gameObject.GetComponent<Paint>().playerIn == true)//如果玩家在要被替换的屏风上
+                {
+                    Vector3 shift = hit.collider.gameObject.GetComponent<Paint>().groundTransform.position - groundTransform.position;
+                    player.transform.position -= shift;
+                }
                 //互换地图块位置
                 Vector3 gTemp = hit.collider.gameObject.GetComponent<Paint>().groundTransform.position;
                 hit.collider.gameObject.GetComponent<Paint>().groundTransform.position = groundTransform.position;

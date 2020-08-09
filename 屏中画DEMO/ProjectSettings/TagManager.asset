@@ -11,6 +11,7 @@ TagManager:
   - Ground_3
   - Ground_4
   - Ground_5
+  - WaterSpirit
   layers:
   - Default
   - TransparentFX

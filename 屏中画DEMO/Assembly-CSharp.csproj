@@ -158,8 +158,11 @@
     <Compile Include="Assets\Resources\Standard Assets\Vehicles\Car\Scripts\SkidTrail.cs" />
     <Compile Include="Assets\Resources\Standard Assets\Vehicles\Car\Scripts\Suspension.cs" />
     <Compile Include="Assets\Resources\Standard Assets\Vehicles\Car\Scripts\WheelEffects.cs" />
+    <Compile Include="Assets\Scripts\Bucket.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Paint.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Spirit.cs" />
     <Compile Include="Assets\Scripts\WaterSpirit.cs" />
     <None Include="Assets\Resources\LowPolyWater_Pack\Shaders\WaterShaded.shader" />
     <None Include="Assets\Resources\AllSkyFree\AllSkyFree_Readme.txt" />
