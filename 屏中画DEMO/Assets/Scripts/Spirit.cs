@@ -6,16 +6,19 @@ using UnityEngine.UI;
 public class Spirit : MonoBehaviour
 {
     public Image bar;//获取进度条
+    public GameObject canvans;
     bool couldPick = false;
     private float delay = 0.5f;
     public bool isDown = false;
     private float lastIsDownTime;
     void Start()
     {
+        
     }
     
     void Update()
     {
+        canvans.transform.LookAt(new Vector3(0,0,605));//让UI填充条看向屏幕，但是不知道为什么是605...
         if(couldPick)
         {
             if (isDown)//检测鼠标左键的长按
@@ -73,12 +76,19 @@ public class Spirit : MonoBehaviour
     {
         GameObject.Find("GameManager").SendMessage("AddProgress");
         gameObject.SetActive(false);
-    }
+    }   
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag=="Player")
         {
             couldPick = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag=="Player")
+        {
+            couldPick = false;
         }
     }
 }
