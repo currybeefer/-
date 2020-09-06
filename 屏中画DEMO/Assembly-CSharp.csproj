@@ -156,12 +156,14 @@
     <Compile Include="Assets\Resources\Standard Assets\Vehicles\Car\Scripts\SkidTrail.cs" />
     <Compile Include="Assets\Resources\Standard Assets\Vehicles\Car\Scripts\Suspension.cs" />
     <Compile Include="Assets\Resources\Standard Assets\Vehicles\Car\Scripts\WheelEffects.cs" />
-    <Compile Include="Assets\Scripts\Bucket.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\Paint.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\Spirit.cs" />
-    <Compile Include="Assets\Scripts\WaterSpirit.cs" />
+    <Compile Include="Assets\Scripts\Game\Bucket.cs" />
+    <Compile Include="Assets\Scripts\Game\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Game\Paint.cs" />
+    <Compile Include="Assets\Scripts\Game\Player.cs" />
+    <Compile Include="Assets\Scripts\Game\Spirit.cs" />
+    <Compile Include="Assets\Scripts\Game\WaterSpirit.cs" />
+    <Compile Include="Assets\Scripts\Menu\SliderControl.cs" />
+    <Compile Include="Assets\Scripts\Menu\SwitchScene.cs" />
     <None Include="Assets\Resources\LowPolyWater_Pack\Shaders\WaterShaded.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>F:/WorldInPaintingDEMO/屏中画DEMO/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
