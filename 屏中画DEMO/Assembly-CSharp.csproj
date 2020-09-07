@@ -158,9 +158,10 @@
     <Compile Include="Assets\Resources\Standard Assets\Vehicles\Car\Scripts\WheelEffects.cs" />
     <Compile Include="Assets\Scripts\Game\Bucket.cs" />
     <Compile Include="Assets\Scripts\Game\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Game\GameUI\ScorePanel.cs" />
+    <Compile Include="Assets\Scripts\Game\GameUI\SettingPanel.cs" />
     <Compile Include="Assets\Scripts\Game\Paint.cs" />
     <Compile Include="Assets\Scripts\Game\Player.cs" />
-    <Compile Include="Assets\Scripts\Game\SettingPanel.cs" />
     <Compile Include="Assets\Scripts\Game\Spirit.cs" />
     <Compile Include="Assets\Scripts\Game\WaterSpirit.cs" />
     <Compile Include="Assets\Scripts\Menu\SliderControl.cs" />

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Paint : MonoBehaviour
 {
@@ -67,13 +68,16 @@ public class Paint : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(1))//如果玩家点击鼠标右键就会旋转
+        if (Input.GetMouseButtonDown(1)&& !EventSystem.current.IsPointerOverGameObject())//如果玩家点击鼠标右键就会旋转
         {
             isClicked = true;
         }
     }
     IEnumerator OnMouseDown()
     {
+        //!EventSystem.current.IsPointerOverGameObject如果当前鼠标在 ui 上返回true 否则返回false
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
             originPosition = m_Transform.position;
             Vector3 temp = m_Transform.position;
             temp.z -= 1.5f;
@@ -81,7 +85,7 @@ public class Paint : MonoBehaviour
             Vector3 screenSpace = Camera.main.WorldToScreenPoint(m_Transform.position);//三维物体坐标转屏幕坐标
                                                                                        //将鼠标屏幕坐标转为三维坐标，再计算物体位置与鼠标之间的距离
             Vector3 offset = m_Transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, 0, screenSpace.z));
-            
+
             while (Input.GetMouseButton(0))
             {
                 Vector3 curScreenSpace = new Vector3(Input.mousePosition.x, 0, screenSpace.z);
@@ -89,10 +93,15 @@ public class Paint : MonoBehaviour
                 m_Transform.position = curPosition;
                 yield return new WaitForFixedUpdate();
             }
+        }
+           
     }
     private void OnMouseUp()
     {
-        Replace();//放下时发出射线，互换地图块位置
+        if(!EventSystem.current.IsPointerOverGameObject())
+        {
+            Replace();//放下时发出射线，互换地图块位置
+        }
     }
     /// <summary>
     /// 屏风位置互换方法
