@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     }
     private void OnCollisionStay(Collision collision)
     {
-        gTag = collision.transform.tag;//当前player位于哪个地块上，gTag的值就是哪个
+        if(collision.gameObject.tag!="Untagged")
+        {
+            gTag = collision.transform.tag;//当前player位于哪个地块上，gTag的值就是哪个
+        }
     }
 }
